@@ -72,4 +72,4 @@
         exports.PATHS = PATHS;
     }
 
-}((function (ns) { this[ns] = this[ns] || { toString: function () { return ns; } }; return this[ns]; }("MJNS")), typeof process !== "undefined" && process.versions != null && process.versions.node != null));
+}((function (ns) { this[ns] = this[ns] || { toString: function () { return ns; } }; return this[ns]; }("WNS")), typeof process !== "undefined" && process.versions != null && process.versions.node != null));
