@@ -83,21 +83,21 @@
 }(
 
     function (relativePathToJSFiles /*String*/, isModule /*Boolean: true*/, useBabel /*Boolean: true*/) {
-        return (useBabel === false ? "nobabel:": "") + (isModule === false ? "": "jsm:") + this.MJNS.__dev.PATHS.JS_FILES + "/" + relativePathToJSFiles;
+        return (useBabel === false ? "nobabel:": "") + (isModule === false ? "": "jsm:") + this.WNS.__dev.PATHS.JS_FILES + "/" + relativePathToJSFiles;
     },
 
     function (relativePathToModules /*String*/, isModule /*Boolean: true*/, useBabel /*Boolean: true*/) {
-        return (useBabel === false ? "nobabel:": "") + (isModule === false ? "": "jsm:") + this.MJNS.__dev.PATHS.JS_MODULES + "/" + relativePathToModules;
+        return (useBabel === false ? "nobabel:": "") + (isModule === false ? "": "jsm:") + this.WNS.__dev.PATHS.JS_MODULES + "/" + relativePathToModules;
     },
 
     function (relativePathToLibsFiles /*String*/, isModule /*Boolean: false*/, useBabel /*Boolean: false*/) {
-        return (useBabel !== true ? "nobabel:": "") + (isModule !== true ? "": "jsm:") + this.MJNS.__dev.PATHS.LIBS_FILES + "/" + relativePathToLibsFiles;
+        return (useBabel !== true ? "nobabel:": "") + (isModule !== true ? "": "jsm:") + this.WNS.__dev.PATHS.LIBS_FILES + "/" + relativePathToLibsFiles;
     },
 
 
     function (files) {
 
-        var self = document.querySelector("[src$=\"" + this.MJNS.__dev.PATHS.JS_LOAD + "\"]"),
+        var self = document.querySelector("[src$=\"" + this.WNS.__dev.PATHS.JS_LOAD + "\"]"),
             fileNames = self.getAttribute("data-files") || Object.keys(files)[0],
 
             isIE11 = window.MSInputMethodContext && document.documentMode;

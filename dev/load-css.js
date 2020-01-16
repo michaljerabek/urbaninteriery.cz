@@ -76,21 +76,21 @@
 }(
 
     function (relativePathToCSSFiles /*String*/) {
-        return this.MJNS.__dev.PATHS.CSS_FILES + "/" + relativePathToCSSFiles;
+        return this.WNS.__dev.PATHS.CSS_FILES + "/" + relativePathToCSSFiles;
     },
 
     function (relativePathToComponents /*String*/) {
-        return this.MJNS.__dev.PATHS.CSS_COMPONETS + "/" + relativePathToComponents;
+        return this.WNS.__dev.PATHS.CSS_COMPONETS + "/" + relativePathToComponents;
     },
 
     function (relativePathToLibsFiles /*String*/) {
-        return this.MJNS.__dev.PATHS.LIBS_FILES + "/" + relativePathToLibsFiles;
+        return this.WNS.__dev.PATHS.LIBS_FILES + "/" + relativePathToLibsFiles;
     },
 
 
     function (files) {
 
-        var self = document.querySelector("[src=\"" + this.MJNS.__dev.PATHS.CSS_LOAD + "\"]"),
+        var self = document.querySelector("[src=\"" + this.WNS.__dev.PATHS.CSS_LOAD + "\"]"),
             fileNames = self.getAttribute("data-files") || Object.keys(files)[0],
             medias = (self.getAttribute("data-media") || "screen").split(/\s*,\s*/);
 
