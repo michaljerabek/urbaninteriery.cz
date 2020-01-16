@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------------*/
+/*------------------------------- VARS -------------------------------*/
+/*--------------------------------------------------------------------*/
+
+:root {
+    --dark-color-1: #111111;
+    --dark-color-2: #474747;
+    --dark-color-3: #878787;
+
+    --light-color-1: #f0f0f0;
+    --light-color-2: #e7e7e7;
+    --light-color-3: #cccccc;
+    --light-color-4: #bdbdbd;
+
+    --primary-color-1: #C9B47F;
+    --primary-color-2: #AF975A;
+    --primary-color-3: #7B6839;
+    --primary-color-4: #625029;
+
+    --secondary-color-1: #BF865E;
+    --secondary-color-2: #B3794E;
+    --secondary-color-3: #9B633C;
+    --secondary-color-4: #82512E;
+
+    --interactive-color-1: #79A8BC;
+    --interactive-color-2: #6797AA;
+    --interactive-color-3: #4A798C;
+    --interactive-color-4: #3C6474;
+
+    --font-title: Caudex, serif;
+    --font-text: Josefin Sans, sans-serif;
+    --font-code: PT Mono, monospace;
+
+    --gutter: 40px;
+}
+
+@media (max-width: 1023px) {
+
+    :root {
+        --gutter: 30px;
+    }
+}
+
+@media (max-width: 639px) {
+
+    :root {
+        --gutter: 20px;
+    }
+}

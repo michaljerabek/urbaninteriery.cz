@@ -1,0 +1,106 @@
+/*--------------------------------------------------------------------*/
+/*---------------------------- NAVIGATION ----------------------------*/
+/*--------------------------------------------------------------------*/
+
+.navigation {
+    max-height: calc(100vh - var(--substract-scroll, 0px));
+    padding: 27px calc(var(--gutter) / 2);
+    padding-right: var(--gutter);
+    padding-left: var(--gutter);
+    margin-left: calc(var(--gutter) * -1);
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #e5e5e5 #f9f9f9;
+}
+
+@media (min-width: 768px) {
+
+    .navigation {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .navigation {
+        height: 100%;
+        max-height: 100vh;
+        padding-top: calc(var(--gutter) * 1.5);
+        margin-left: 0;
+    }
+}
+
+    .navigation__top-list,
+    .navigation__sub-list {
+        padding: 0;
+        margin: 0;
+
+        list-style-type: none;
+    }
+
+    .navigation__top-list:last-child {
+        margin-bottom: 20px;
+    }
+
+    .navigation__sub-list {
+        margin-bottom: 17px;
+    }
+
+            .navigation__top-link {
+                display: block;
+                padding-bottom: 10px;
+
+                font-family: var(--font-title);
+                font-size: 1.1875rem;
+                font-weight: bold;
+                font-variant: small-caps;
+                line-height: 1.5625rem;
+                letter-spacing: 0.005em;
+
+                color: var(--dark-color-2);
+            }
+
+            @media (max-width: 639px), (min-width: 768px) and (max-width: 1023px)  {
+
+                .navigation__top-link {
+                    font-size: 1.0625rem;
+                }
+            }
+
+            .navigation__sub-link {
+                position: relative;
+
+                display: block;
+                padding: 2px 0;
+                padding-left: calc(27px + 4px);
+
+                color: var(--dark-color-2);
+            }
+
+            .navigation__sub-link:after {
+                content: "";
+
+                position: absolute;
+                top: 15px;
+                left: 0.75em;
+
+                transform: rotate(45deg);
+
+                width: 4px;
+                height: 4px;
+                margin: auto;
+
+                background-color: currentColor;
+            }
+
+            @media (max-width: 639px), (min-width: 768px) and (max-width: 1023px)  {
+
+                .navigation__sub-link:after {
+                    top: 13px;
+                }
+            }

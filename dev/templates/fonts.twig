@@ -1,0 +1,6 @@
+=GX={% for font in fonts %}
+{% if indexClass %}#rewrite .font{{loop.index}},{% else %}=GX={% endif %}
+#rewrite .font-{{font}} {
+    font-family: var(--font-{{font}});
+}
+{% endfor %}=GX=

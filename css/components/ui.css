@@ -1,0 +1,329 @@
+/*====================================================================*/
+/*-------------------------------- UI --------------------------------*/
+/*====================================================================*/
+
+.inverse-ui {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+}
+
+::selection {
+    color: var(--color-light);
+    background-color: var(--color-secondary);
+}
+
+.inverse-ui::selection,
+.inverse-ui ::selection,
+.inverse-selection::selection,
+.inverse-selection ::selection {
+    color: #000;
+    background-color: var(--color-highlight);
+}
+
+/* Styly zaměřovatelných elementů. */
+:focus {
+    outline-color: rgba(var(--color-dark-rgb), 0.75);
+}
+
+:focus-visible {
+    outline: 2rem solid var(--color-dark);
+}
+
+:-moz-focusring {
+    outline: 2rem solid var(--color-dark);
+}
+
+.inverse-ui:focus,
+.inverse-ui :focus,
+.inverse-focus:focus,
+.inverse-focus :focus {
+    outline-color: rgba(var(--color-light-rgb), 0.75);
+}
+
+.inverse-ui:focus-visible,
+.inverse-ui :focus-visible,
+.inverse-focus:focus-visible,
+.inverse-focus :focus-visible {
+    outline-color: var(--color-light);
+}
+
+.inverse-ui:-moz-focusring,
+.inverse-ui :-moz-focusring,
+.inverse-focus:-moz-focusring,
+.inverse-focus :-moz-focusring {
+    outline-color: var(--color-light);
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus:not(:-moz-focusring) {
+    outline: none;
+}
+
+[tabindex="-1"]:focus,
+/* Kompleteně odstraní outline ze zeměřovatelných elementů.
+* Varianta "deep" odstraní outline i u vnořených elementů. */
+.custom-focus-unsafe:focus,
+.custom-focus-unsafe-deep:focus,
+.custom-focus-unsafe-deep :focus {
+    outline: none;
+}
+
+/* Odstraní outline, ale zachová ho u :focus-visible. */
+.custom-focus:focus {
+    outline-width: 0px;
+}
+
+.custom-focus:focus-visible {
+    outline-width: 2rem;
+}
+
+.custom-focus:-moz-focusring {
+    outline-width: 2rem;
+}
+
+.custom-focus-deep:focus,
+.custom-focus-deep :focus {
+    outline-width: 0px;
+}
+
+.custom-focus-deep:focus-visible,
+.custom-focus-deep :focus-visible {
+    outline-width: 2rem;
+}
+
+.custom-focus-deep:-moz-focusring,
+.custom-focus-deep :-moz-focusring {
+    outline-width: 2rem;
+}
+
+/*--------------------------------------------------------------------*/
+/*-------------------------- ACCESSIBILITY ---------------------------*/
+/*--------------------------------------------------------------------*/
+
+/* Navigace pro lepší přístupnost.
+ * Při spuštění webu se pomocí klávesy tab zobrazí v levém horním rohu
+ * možnosti přejít na hlavní navigaci nebo obsah.
+ */
+
+.ui__accessibility-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999;
+
+    padding: 8rem 12rem;
+
+    font-size: 16rem;
+
+    color: var(--color-dark);
+    background-color: var(--color-light);
+
+    overflow: hidden;
+}
+
+.ui__accessibility-nav,
+.ui__accessibility-nav:focus,
+.ui__accessibility-nav:hover {
+    transition: none;
+}
+
+.ui__accessibility-nav:not(:focus) {
+    width: 0;
+    height: 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------------------------*/
+/*---------------------------- TRANSITION ----------------------------*/
+/*--------------------------------------------------------------------*/
+
+/* Univerzální transition.
+* Lze přidat jakémukoliv elementu.
+* Pokud bude element s třídou .transition uvnitř elementu,
+* který má :hover, :focus nebo :active, bude se chovat stejně,
+* jako kdyby i tento element měl :hover, :focus nebo :active. */
+a,
+button,
+.transition {
+    transition: all var(--transition);
+}
+
+a:hover,
+a:focus,
+button:hover,
+button:focus,
+.transition:hover,
+.transition:focus,
+a:hover .transition,
+a:focus .transition,
+button:hover .transition,
+button:focus .transition,
+.transition:hover .transition,
+.transition:focus .transition {
+    transition: all var(--transition-change);
+}
+
+a:focus-within,
+button:focus-within,
+.transition:focus-within,
+a:focus-within .transition,
+button:focus-within .transition,
+.transition:focus-within .transition {
+    transition: all var(--transition-change);
+}
+
+.transition:active,
+a:active,
+a:active .transition,
+button:active,
+button:active .transition,
+.transition:active .transition {
+    transition: all var(--transition-active);
+}
+
+/*--------------------------------------------------------------------*/
+/*------------------------------ ICONS -------------------------------*/
+/*--------------------------------------------------------------------*/
+
+/* Přidá elementům ikonu (sprite). */
+.icon {
+    position: relative;
+
+    display: inline-block;
+
+    fill: currentColor;
+}
+
+.icon:not(svg) {
+    /*background-image: url("../../img/sprite.png")*/;
+    background-repeat: no-repeat;
+}
+
+/*--------------------------------------------------------------------*/
+/*------------------------------ INPUTS ------------------------------*/
+/*--------------------------------------------------------------------*/
+
+/* Vizuálně skryje element.
+ * Slouží hlavně pro skrytí checkboxů použitých jako přepínače obsahu,
+ * kde nemá být checkbox vidět a přepíná se labelem. */
+.ui__hidden-toggle {
+    position: absolute;
+
+    opacity: 0;
+}
+
+select,
+textarea,
+[type="text"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="email"],
+[type="number"],
+[type="step"],
+[type^="date"],
+[type="time"] {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+
+    background: none;
+    border: none;
+    border-radius: 0rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    transition: all var(--transition-duration) var(--transition-easing) var(--transition-delay);
+}
+
+select:hover,
+textarea:hover,
+[type="text"]:hover,
+[type="password"]:hover,
+[type="search"]:hover,
+[type="tel"]:hover,
+[type="email"]:hover,
+[type="number"]:hover,
+[type="step"]:hover,
+[type^="date"]:hover,
+[type="time"]:hover,
+select:focus,
+textarea:focus,
+[type="text"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="email"]:focus,
+[type="number"]:focus,
+[type="step"]:focus,
+[type^="date"]:focus,
+[type="time"]:focus {
+    transition: all var(--transition-change-duration) var(--transition-change-easing) var(--transition-change-delay);
+}
+
+select:focus-visible,
+textarea:focus-visible,
+[type="text"]:focus-visible,
+[type="password"]:focus-visible,
+[type="search"]:focus-visible,
+[type="tel"]:focus-visible,
+[type="email"]:focus-visible,
+[type="number"]:focus-visible,
+[type="step"]:focus-visible,
+[type^="date"]:focus-visible,
+[type="time"]:focus-visible {
+    outline: none;
+}
+
+select:-moz-focusring,
+textarea:-moz-focusring,
+[type="text"]:-moz-focusring,
+[type="password"]:-moz-focusring,
+[type="search"]:-moz-focusring,
+[type="tel"]:-moz-focusring,
+[type="email"]:-moz-focusring,
+[type="number"]:-moz-focusring,
+[type="step"]:-moz-focusring,
+[type^="date"]:-moz-focusring,
+[type="time"]:-moz-focusring {
+    outline: none;
+}
+
+/*
+input::-ms-clear {
+    display: none;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+*/
+/*
+select::-ms-expand {
+    display: none;
+}
+*/
+
+/*--------------------------------------------------------------------*/
+/*---------------------------- TEXT-ARROW ----------------------------*/
+/*--------------------------------------------------------------------*/
+
+/*<svg class="ui-text-arrow x-print" width="13" height="14" focusable="false" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <use xlink:href="img/svg-sprite/symbol/svg/sprite.symbol.svg#icon-arrow" />
+</svg>*/
+
+.ui-text-arrow {
+    display: inline-block;
+
+    height: 0.6666em;
+    width: calc(0.6666em * (13 / 14));
+    margin-right: 2rem;
+
+    vertical-align: baseline;
+
+    stroke: currentColor;
+    stroke-width: 1;
+}

@@ -1,0 +1,92 @@
+/*====================================================================*/
+/*--------------------------- PAGE-FOOTER ----------------------------*/
+/*====================================================================*/
+
+.page-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+    .page-footer > .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-top: 55rem;
+        padding-bottom: 55rem;
+    }
+
+    @media (max-width: 767px) {
+
+        .page-footer > .center {
+            padding-top: 40rem;
+            padding-bottom: 40rem;
+        }
+    }
+
+        .page-footer p {
+            margin: 0;
+
+            font-size: 17rem;
+            font-style: italic;
+            text-align: center;
+            line-height: 25rem;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 767px) {
+
+            .page-footer p {
+                font-size: 15rem;
+                line-height: 24rem;
+            }
+        }
+
+        @media (max-width: 639px) {
+
+            .page-footer p + p {
+                margin-top: 10rem;
+            }
+        }
+
+            .page-footer p a,
+            .page-footer p a:visited,
+            .page-footer p a:not([class*="__"]):visited:not(:hover):not(:focus) {
+                text-decoration: none;
+
+                color: inherit;
+            }
+
+            .page-footer p a:hover {
+                color: var(--color-highlight);
+            }
+
+            .page-footer p a:focus {
+                text-decoration: underline;
+
+                color: var(--color-highlight);
+            }
+
+            @supports (text-decoration-color: red) {
+
+                .page-footer p a {
+                    text-decoration: underline;
+                    text-decoration-color: transparent;
+                }
+
+                .page-footer p a:focus {
+                    text-decoration-color: currentColor;
+                }
+            }
+
+@media (min-width: 1260px) {}
+@media (min-width: 1540px) {}
+@media (min-width: 1260px) and (max-width: 1539px) {}
+@media (min-width: 768px) and (max-width: 1259px) {}
+@media (min-width: 1024px) and (max-width: 1259px) {}
+@media (min-width: 768px) and (max-width: 1023px) {}
+@media (max-width: 767px) {}
+@media (min-width: 640px) and (max-width: 767px) {}
+@media (min-width: 480px) and (max-width: 639px) {}
+@media (max-width: 479px) {}

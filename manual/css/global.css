@@ -1,0 +1,234 @@
+/*--------------------------------------------------------------------*/
+/*------------------------------ GLOBAL ------------------------------*/
+/*--------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+:after,
+:before {
+    box-sizing: inherit;
+}
+
+:focus {
+    outline: 1px dotted var(--interactive-color-4);
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--interactive-color-4);
+}
+
+::selection {
+    color: var(--light-color-1);
+    background-color: var(--primary-color-3);
+}
+
+html,
+body {
+    min-width: 320px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    font-family: var(--font-text);
+
+    color: var(--dark-color-1);
+
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.1875rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    letter-spacing: -0.025em;
+}
+
+@media (max-width: 639px), (min-width: 768px) and (max-width: 1023px) {
+
+    body {
+        font-size: 1.0625rem;
+        line-height: 1.6875rem;
+    }
+}
+
+strong {
+    letter-spacing: -0.0315em;
+}
+
+p,
+li,
+a:not(.btn),
+.text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.no-hyphens,
+.no-hyphens * {
+    word-wrap: normal;
+    overflow-wrap: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+.small {
+    font-size: 0.85em;
+}
+
+strong.small,
+strong .small {
+    font-weight: 600;
+}
+
+code strong.small,
+code strong .small,
+strong code.small,
+strong code .small {
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-title);
+    font-variant: small-caps;
+    letter-spacing: 0.0075em;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+    letter-spacing: 0.0075em;
+}
+
+kbd,
+code,
+pre,
+kbd * ,
+code * ,
+pre *  {
+    font-family: var(--font-code);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5625rem;
+    letter-spacing: 0;
+}
+
+kbd.small,
+kbd .small,
+code.small,
+code .small {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 639px), (min-width: 768px) and (max-width: 1023px)  {
+
+    kbd,
+    code,
+    pre {
+        font-size: 0.875rem;
+        line-height: 1.4375rem;
+    }
+
+    kbd.small,
+    code.small,
+    code .small {
+        font-size: 0.8125rem;
+    }
+}
+
+strong, b {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+
+    color: var(--primary-color-3);
+}
+
+a:hover,
+a:focus {
+    color: var(--interactive-color-3);
+}
+
+a:active {
+    color: var(--secondary-color-3);
+}
+
+a,
+button,
+.transition,
+a .transition ,
+button .transition {
+    transition: all 0.275s cubic-bezier(.5, .25, .5, 1) 0s;
+}
+
+a:hover,
+a:focus,
+button:hover,
+button:focus,
+.transition:hover,
+.transition:focus,
+a:hover .transition,
+a:focus .transition,
+button:hover .transition,
+button:focus .transition,
+.transition:hover .transition,
+.transition:focus .transition {
+    transition: all 0.125s ease-out 0s;
+}
+
+a:focus-within,
+button:focus-within,
+.transition:focus-within,
+a:focus-within .transition,
+button:focus-within .transition,
+.transition:focus-within .transition {
+    transition: all 0.125s ease-out 0s;
+}
+
+.transition:active,
+a:active,
+a:active .transition,
+button:active,
+button:active .transition,
+.transition:active .transition {
+    transition: all 0.05s ease-out 0s;
+}
+
+.visually-hidden {
+    position: absolute;
+
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}

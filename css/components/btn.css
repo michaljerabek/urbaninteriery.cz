@@ -1,0 +1,229 @@
+/*====================================================================*/
+/*-------------------------------- BTN -------------------------------*/
+/*====================================================================*/
+
+.btn {
+    display: inline-block;
+
+    font-size: 0;
+    text-decoration: none;
+    white-space: nowrap;
+
+    color: inherit;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+
+    contain: content;
+}
+
+.btn,
+.btn .text {
+    word-wrap: normal;
+    overflow-wrap: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+.btn::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+}
+
+.btn {
+    position: relative;
+
+    padding: 16rem 30rem;
+
+    text-align: center;
+
+    border: 1rem solid;
+    outline-offset: -2rem;
+
+    overflow: hidden;
+
+    transition: all 0.25s cubic-bezier(.49, .36, .46, .82) 0s;
+}
+
+@media (max-width: 1023px) {
+
+    .btn {
+        padding: 14rem 25rem;
+    }
+}
+
+@media (max-width: 639px) {
+
+    .btn {
+        padding: 12rem 25rem;
+    }
+}
+
+.btn--small {
+    padding: 14rem 30rem;
+}
+
+@media (max-width: 1023px) {
+
+    .btn--small {
+        padding: 12rem 25rem;
+    }
+}
+
+@media (max-width: 639px) {
+
+    .btn--small {
+        padding: 11rem 20rem;
+    }
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    transition: all 0.075s cubic-bezier(0, 0, .51, .97) 0s;
+}
+
+.btn:before,
+.btn:after {
+    content: "";
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    transform: scale(0.75);
+    backface-visibility: hidden;
+
+    opacity: 0;
+
+    transition: inherit;
+    will-change: opacity, transform;
+}
+
+.btn:after {
+    transition-delay: 0.055s;
+}
+
+.btn:hover:before,
+.btn:focus:before {
+    transform: none;
+
+    opacity: 0.25;
+}
+
+.btn:hover:after,
+.btn:focus:after {
+    transform: none;
+
+    opacity: 0.25;
+
+    transition-delay: 0.045s;
+}
+
+.btn--light {
+    color: var(--color-light);
+    border-color: var(--color-highlight);
+    box-shadow: inset 0px 0px 0px 2rem rgba(var(--color-highlight-rgb), 0);
+}
+
+.btn--light:focus {
+    box-shadow: inset 0px 0px 0px 2rem var(--color-highlight);
+}
+
+.btn--light:before,
+.btn--light:after {
+    background-color: var(--color-secondary);
+}
+
+.btn--dark {
+    color: var(--color-dark);
+    border-color: var(--color-secondary);
+    box-shadow: inset 0px 0px 0px 2rem rgba(var(--color-secondary-rgb), 0);
+}
+
+.btn--dark:focus {
+    box-shadow: inset 0px 0px 0px 2rem var(--color-secondary);
+}
+
+.btn--dark:before,
+.btn--dark:after {
+    background-color: rgba(var(--color-highlight-dark-rgb), 0.5);
+}
+
+.btn:focus-visible {
+    box-shadow: none;
+}
+
+.btn:-moz-focusring {
+    box-shadow: none;
+}
+
+    .btn .text {
+        position: relative;
+        z-index: 3;
+
+        display: inline-block;
+
+        backface-visibility: hidden;
+
+        font-size: 19rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 21rem;
+        letter-spacing: 0.05em;
+
+        vertical-align: middle;
+
+        transition: inherit;
+    }
+
+    @media (max-width: 1023px) {
+
+        .btn .text {
+            font-size: 17rem;
+            line-height: 20rem;
+            letter-spacing: 0.07em;
+        }
+    }
+
+    @media (max-width: 639px) {
+
+        .btn .text {
+            font-size: 15rem;
+            line-height: 17rem;
+            letter-spacing: 0.06em;
+        }
+    }
+
+    .btn--small .text {
+        font-size: 17rem;
+        line-height: 20rem;
+        letter-spacing: 0.07em;
+    }
+
+    @media (max-width: 1023px) {
+
+        .btn--small .text {
+            font-size: 15rem;
+            line-height: 17rem;
+            letter-spacing: 0.06em;
+        }
+    }
+
+    @media (max-width: 639px) {
+
+        .btn--small .text {
+            font-size: 14rem;
+            line-height: 16rem;
+            letter-spacing: 0.09em;
+        }
+    }

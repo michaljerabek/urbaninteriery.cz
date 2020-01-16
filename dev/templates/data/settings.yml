@@ -1,0 +1,11 @@
+media:
+    desktop:   [1260, null]
+    desktop-l: [1540, null]
+    desktop-s: [1260, 1539]
+    tablet:    [ 768, 1259]
+    tablet-l:  [1024, 1259]
+    tablet-s:  [ 768, 1023]
+    mobile:    [null,  767]
+    mobile-l:  [ 640,  767]
+    mobile-m:  [ 480,  639]
+    mobile-s:  [null,  479]

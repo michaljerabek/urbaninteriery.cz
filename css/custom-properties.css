@@ -1,0 +1,69 @@
+/*====================================================================*/
+/*------------------------ CUSTOM-PROPERTIES -------------------------*/
+/*====================================================================*/
+
+/* Základní nastavení globálních proměnných webu. CSS Custom Properties
+ * (CP) se přepíší pomocí PostCSS a pluginu postcss-css-variables
+ * skutečnými hodnotami. Není tak možné využít vlastností CP, které
+ * závisí na existenci DOMu.
+ */
+
+:root {
+    --page-max-width: 1540rem;
+    --page-padding: 40rem;
+
+    --font-primary: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif;
+
+    --color-primary: #636e73;
+    --color-primary-rgb: 99, 110, 115;
+
+    --color-secondary: #9A4953;
+    --color-secondary-rgb: 154, 73, 83;
+
+    --color-secondary-light: #C5969A;
+    --color-secondary-light-rgb: 197, 150, 154;
+
+    --color-highlight: #D8C89B;
+    --color-highlight-rgb: 216, 200, 155;
+
+    --color-highlight-dark: #CBAA69;
+    --color-highlight-dark-rgb: 203, 170, 105;
+
+    --color-light: #F9F8F7;
+    --color-light-rgb: 249, 248, 247;
+
+    --color-dark: #1D2224;
+    --color-dark-rgb: 29, 34, 36;
+
+    /* průhlednost na :hover / :focus */
+    --hf-opacity: 0.85;
+
+    --transition-duration: 0.275s;
+    --transition-easing: cubic-bezier(.5, .25, .5, 1);
+    --transition-delay: 0s;
+    --transition: var(--transition-duration) var(--transition-easing) var(--transition-delay);
+
+    --transition-change-duration: 0.125s;
+    --transition-change-easing: ease-out;
+    --transition-change-delay: 0s;
+    --transition-change: var(--transition-change-duration) var(--transition-change-easing) var(--transition-change-delay);
+
+    --transition-active-duration: 0.05s;
+    --transition-active-easing: ease-out;
+    --transition-active-delay: 0s;
+    --transition-active: var(--transition-active-duration) var(--transition-active-easing) var(--transition-active-delay);
+}
+
+/* GENERATE: MEDIA | TWIG | settings.yml
+    ====
+    @media (max-width: {{media.mobile[1]}}px) {
+*/
+
+@media (max-width: 767px) {
+
+/* /GENERATE: MEDIA */
+
+    :root {
+        --page-padding: 15rem;
+    }
+}

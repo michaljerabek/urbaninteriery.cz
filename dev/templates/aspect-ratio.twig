@@ -1,0 +1,113 @@
+=GX={% if ratios and ratios.length %}
+=GX={% for r, ratio in ratios %}
+[class~="{{ratio}}"]{% if r + 1 == ratios.length %} {{'{'}}{% else %},{% endif %}{% endfor %}
+    position: relative;
+}
+{% for r, ratio in ratios %}
+[class~="{{ratio}}"]:after{% if r + 1 == ratios.length %} {{'{'}}{% else %},{% endif %}{% endfor %}
+    content: "";
+
+    display: block;
+}
+{% for r, ratio in ratios %}
+=GX={% if ratio matches "/[0-9]+:[0-9]+/" %}
+[class~="{{ratio}}"]:after {
+    padding-bottom: {{((ratio|split(":")[1] / ratio|split(":")[0]) * 100)|round(7, "floor")}}%;
+}{% endif %}
+{% endfor %}=GX=
+    {% for r, ratio in ratios %}
+    [class~="{{ratio}}"] > *{% if r + 1 == ratios.length %} {{'{'}}{% else %},{% endif %}{% endfor %}
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+    }{% endif %}{% if cover %}
+
+/* Nastaví vnořený element (obrázek) na object-fit: cover;
+* U nepodporujících prohlížečů roztáhne vnořený element
+* minimálně na velikost rodičovského a zarovná ho do středu.
+* Používá se na elementech, které zachovávají poměr stran. */
+.cover-aspect-ratio {
+    overflow: hidden;
+}
+
+    .cover-aspect-ratio > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: auto;
+        min-width: 100%;
+        height: auto;
+        min-height: 100%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    @supports (object-fit: cover) {
+
+        .cover-aspect-ratio > * {
+            top: 0;
+            left: 0;
+
+            object-fit: cover;
+            object-position: center center;
+
+            width: 100%;
+            height: 100%;
+
+            transform: none;
+        }
+    }{% endif %}{% if contain %}
+
+/* Nastaví vnořený element (obrázek) na object-fit: contain;
+* U nepodporujících prohlížečů omezí velikost vnořeného
+* elementu na rozměry rodičovského a zarovná ho do středu.
+* Používá se na elementech, které zachovávají poměr stran. */
+.contain-aspect-ratio > * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: auto;
+}
+
+@supports (object-fit: contain) {
+
+    .contain-aspect-ratio > * {
+        right: auto;
+        bottom: auto;
+
+        object-fit: contain;
+        object-position: center center;
+
+        width: 100%;
+        height: 100%;
+    }
+}{% endif %}{% if max %}
+
+/* Omezí velikost vnořeného elementu na rozměry rodičovského
+* a zarovná ho do středu.
+* Používá se na elementech, které zachovávají poměr stran. */
+.max-aspect-ratio > * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: auto;
+}{% endif %}

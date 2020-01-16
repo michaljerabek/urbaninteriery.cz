@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1575" height="1575" viewBox="0 0 1575 1575" stroke-width="2" fill="none" stroke="#fff">
+    <g opacity="0.07">
+        <circle opacity="0.66" cx="155" cy="155" r="155" />
+        <circle opacity="0.75" cx="470" cy="155" r="155" />
+        <circle opacity="0.33" cx="785" cy="155" r="155" />
+        <circle opacity="0.5" cx="1100" cy="155" r="155" />
+        <circle opacity="0.75" cx="1415" cy="155" r="155" />
+        <circle opacity="0.66" cx="155" cy="470" r="155" />
+        <circle opacity="0.33" cx="470" cy="470" r="155" />
+        <circle opacity="1.75" cx="785" cy="470" r="155" />
+        <circle opacity="0.25" cx="1100" cy="470" r="155" />
+        <circle opacity="0.5" cx="1415" cy="470" r="155" />
+        <circle opacity="0.25" cx="155" cy="785" r="155" />
+        <circle opacity="0.75" cx="470" cy="785" r="155" />
+        <circle opacity="0.66" cx="785" cy="785" r="155" />
+        <circle opacity="0.33" cx="1100" cy="785" r="155" />
+        <circle opacity="1.0" cx="1415" cy="785" r="155" />
+        <circle opacity="0.5" cx="155" cy="1100" r="155" />
+        <circle opacity="0.25" cx="470" cy="1100" r="155" />
+        <circle opacity="1.0" cx="785" cy="1100" r="155" />
+        <circle opacity="0.5" cx="1100" cy="1100" r="155" />
+        <circle opacity="0.33" cx="1415" cy="1100" r="155" />
+        <circle opacity="0.75" cx="155" cy="1415" r="155" />
+        <circle opacity="1.0" cx="470" cy="1415" r="155" />
+        <circle opacity="0.25" cx="785" cy="1415" r="155" />
+        <circle opacity="0.66" cx="1100" cy="1415" r="155" />
+        <circle opacity="0.75" cx="1415" cy="1415" r="155" />
+    </g>
+</svg>

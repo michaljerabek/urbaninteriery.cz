@@ -1,0 +1,27 @@
+.cm-keyword        { color: #4A798C; }
+.cm-atom           { color: #9B633C; }
+.cm-number         { color: #7B6839; }
+.cm-def            { color: #474747; }
+.cm-variable       { color: #7B6839; }
+.cm-variable-2     { color: #474747; }
+.cm-variable-3     { color: #4A798C; }
+.cm-operator       { color: #474747; }
+.cm-comment        { color: #878787; }
+.cm-string         { color: #9B633C; }
+.cm-string-2       { color: #3C6474; }
+.cm-meta           { color: #9B633C; }
+.cm-qualifier      { color: #474747; }
+.cm-builtin        { color: #7B6839; }
+.cm-bracket        { color: #474747; }
+.cm-tag            { color: #625029; }
+.cm-bracket.cm-tag { color: #ad9a6f }
+.cm-attribute      { color: #7B6839; }
+.cm-property       { color: #625029; }
+.cm-quote          { color: #474747; }
+.cm-header         { color: #4A798C; }
+.cm-link           { color: #625029; }
+.cm-em             { color: #82512E; font-style: italic; }
+.cm-strong         { color: #4A798C; }
+.cm-strikethrough  { color: #9B633C; }
+.cm-hr             { color: #7B6839; }
+.cm-error          { color: #82512E; }

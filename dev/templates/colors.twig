@@ -1,0 +1,16 @@
+=GX={% for color in colors %}{% set index = loop.index %}
+=GX={% for prop, class in props %}
+{% if indexClass %}#rewrite .{{class}}{{index}},
+#rewrite .active-{{class}}{{index}}[class*="--active"],
+#rewrite [class*="--active"] .active-{{class}}{{index}},
+#rewrite .hf-{{class}}{{index}}:focus,
+#rewrite .hf-{{class}}{{index}}:hover,{% else %}=GX={% endif %}
+#rewrite .{{class}}-{{color}},
+#rewrite .active-{{class}}-{{color}}[class*="--active"],
+#rewrite [class*="--active"] .active-{{class}}-{{color}},
+#rewrite .hf-{{class}}-{{color}}:focus,
+#rewrite .hf-{{class}}-{{color}}:hover {
+    {{prop}}: var(--color-{{color}});
+}
+{% endfor %}=GX=
+{% endfor %}=GX=
