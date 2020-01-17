@@ -1,8 +1,8 @@
 # CSS Variables for IE11
-A real Custom Properties polyfill for IE11.
-Used on about 9000 [Live Websites](https://publicwww.com/websites/ie11CustomProperties/ "source")
-*[see the demo!](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/ed6a269145661bfc6a43a5b69f06248fa760e766/demo.html)*
-[Tests](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/ed6a269145661bfc6a43a5b69f06248fa760e766/tests.html)
+A real Custom Properties polyfill for IE11.  
+Used on about 9000 [Live Websites](https://publicwww.com/websites/ie11CustomProperties/ "source")  
+  
+**[See the demo!](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/ed6a269145661bfc6a43a5b69f06248fa760e766/demo.html)**  
 
 **New in v2.7.2: Great performance improvement**
 
@@ -35,7 +35,10 @@ You only want IE11 to load the polyfill, use this snipped in the head of your ht
 
 ## Help wanted!
 - Add a ⭐️
-- Vote for this solution at stackoverflow https://stackoverflow.com/a/57000437/4865307
+- Vote for this solution at stackoverflow   
+https://stackoverflow.com/a/57000437/4865307 and  
+https://stackoverflow.com/a/56830621/4865307 and   
+https://stackoverflow.com/a/57000620/4865307
 - Test, report bugs and send pull requests.
 - Tweet about if you like it.
 
@@ -86,3 +89,7 @@ Use `<div style="--color:blue" ie-style="--color:blue">` for it
 #### specificity for properties containing "var()"
 ...is ~~always little~~ highter if vars are not served by root, cause each selector gets an additional class-selector
 eg. `#header` results in `#header.iecp_u44`
+
+## Tests
+[See the tests](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/ed6a269145661bfc6a43a5b69f06248fa760e766/tests.html)  
+PRs welcome
