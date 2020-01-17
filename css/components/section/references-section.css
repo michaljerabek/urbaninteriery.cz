@@ -325,6 +325,10 @@
 }
 
 .references-section__header ~ .references-section__header {
+    color: #D4A6AA;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header {
     color: #8A9194;
 }
 
