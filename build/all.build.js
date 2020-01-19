@@ -1736,9 +1736,10 @@
 
   /*jshint esnext: true, evil: true, browser: true, devel: true, jquery: true*/
   var NAME = "WNS";
+  var SELF = window[NAME] || {};
   var $win, $doc;
 
-  var _default = Object.defineProperties({}, {
+  var _default = Object.defineProperties(SELF, {
     $: {
       configurable: false,
       get: function get() {

@@ -1,10 +1,11 @@
 /*jshint esnext: true, evil: true, browser: true, devel: true, jquery: true*/
 
 const NAME = "WNS";
+const SELF = window[NAME] || {};
 
 let $win, $doc;
 
-export default Object.defineProperties({}, {
+export default Object.defineProperties(SELF, {
 
     $: {
         configurable: false,
