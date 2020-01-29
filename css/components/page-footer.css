@@ -13,40 +13,40 @@
         justify-content: center;
         align-items: center;
 
-        padding-top: 55rem;
-        padding-bottom: 55rem;
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
     }
 
     @media (max-width: 767px) {
 
         .page-footer > .center {
-            padding-top: 40rem;
-            padding-bottom: 40rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
         }
     }
 
         .page-footer p {
             margin: 0;
 
-            font-size: 17rem;
+            font-size: 1.7rem;
             font-style: italic;
             text-align: center;
-            line-height: 25rem;
+            line-height: 2.5rem;
             letter-spacing: 0.02em;
         }
 
         @media (max-width: 767px) {
 
             .page-footer p {
-                font-size: 15rem;
-                line-height: 24rem;
+                font-size: 1.5rem;
+                line-height: 2.4rem;
             }
         }
 
         @media (max-width: 639px) {
 
             .page-footer p + p {
-                margin-top: 10rem;
+                margin-top: 1rem;
             }
         }
 

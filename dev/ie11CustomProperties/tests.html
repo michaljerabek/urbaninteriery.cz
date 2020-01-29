@@ -12,6 +12,9 @@ html {
     --green:green;
     --red:red;
 }
+body {
+    --body-green:green;
+}
 .tests > * {
     color:#fff;
     padding:.5em;
@@ -78,11 +81,8 @@ This to make it possible to show the original style on hover.
         non root custom property
         <div class=code>
             <pre>
-                body {
-                    --non-root-cp:green;
-                }
                 .non-root-cp {
-                    background:var(--non-root-cp);
+                    background:var(--body-green);
                 }
             </pre>
         </div>
@@ -99,6 +99,51 @@ This to make it possible to show the original style on hover.
         </div>
     </div>
 
+    <div class=fallback-var>
+        other var as fallback
+        <div class=code>
+            <pre>
+                .fallback-var {
+                    background-color:var(--notdefined, var(--green));
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div class=fallback-var-mixed>
+        fallback var mixed, including round brackets (url())
+        <div class=code>
+            <pre>
+                .fallback-var-mixed {
+                    background:var(--notdefined, repeat-y var(--undefined, var(--green)) fixed url(x.y));
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div class=multiple-vars>
+        multiple vars inside brackets (linear-gradient)
+        <div class=code>
+            <pre>
+                .multiple-vars {
+                    --my-green:green;
+                    background: var(--green) linear-gradient(var(--green), var(--body-green), var(--my-green), transparent);
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div class=fallback-non-body-var>
+        other non root var as fallback
+        <div class=code>
+            <pre>
+                .fallback-non-body-var {
+                    background-color:var(--notdefined, var(--body-green));
+                }
+            </pre>
+        </div>
+    </div>
+
     <div class=chaining>
         chaining
         <div class=code>
@@ -108,6 +153,19 @@ This to make it possible to show the original style on hover.
                     --b:var(--a);
                     --c:var(--b);
                     background-color:var(--c);
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div class=nested-calc>
+        nested calc
+        <div class=code>
+            <pre>
+                .nested-calc {
+                    --two:calc(1 + 1);
+                    background-image: linear-gradient(green, green 50%, transparent 50%, transparent);
+                    background-size: 100% calc(var(--two) * 100%);
                 }
             </pre>
         </div>
@@ -226,7 +284,7 @@ This to make it possible to show the original style on hover.
     </div>
 
     <div id=js_setP>
-        js setProperty
+        setProperty on own element
         <div class=code>
             <script>
                 js_setP.style.setProperty('--myGreen','green');
@@ -234,6 +292,34 @@ This to make it possible to show the original style on hover.
             <pre>
                 #js_setP {
                     background-color:var(--myGreen);
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div id=bodyDynamic inactive>
+        setProperty on body
+        <div class=code>
+            <script>
+                document.body.style.setProperty('--dyn-body-green', 'green');
+            </script>
+            <pre>
+                #bodyDynamic {
+                    background-color:var(--dyn-body-green);
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div id=rootDynamic inactive>
+        setProperty on root
+        <div class=code>
+            <script>
+                document.documentElement.style.setProperty('--dyn-root-green', 'green');
+            </script>
+            <pre>
+                #rootDynamic {
+                    background-color:var(--dyn-root-green);
                 }
             </pre>
         </div>
@@ -312,7 +398,7 @@ This to make it possible to show the original style on hover.
             </script>
             <pre>
                 #addLater[active] {
-                    background-color:green;
+                    background-color:var(--green);
                 }
             </pre>
         </div>

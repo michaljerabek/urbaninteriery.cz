@@ -19,8 +19,8 @@
 /*--------------------------------------------------------------------*/
 
 .references-section__references {
-    max-width: 1920rem;
-    padding: 0 5rem;
+    max-width: 192rem;
+    padding: 0 0.5rem;
     margin-right: auto;
     margin-left: auto;
 
@@ -30,21 +30,21 @@
 }
 
 .references-section--narrow .references-section__references {
-    max-width: 1540rem;
+    max-width: 154rem;
 }
 
 @media (min-width: 640px) and (max-width: 799px),
     (min-width: 420px) and (max-width: 499px) {
 
         .references-section__references {
-            padding: 0 4rem;
+            padding: 0 0.4rem;
         }
 }
 
 @media (min-width: 360px) and (max-width: 419px) {
 
     .references-section__references {
-        padding: 0 3rem;
+        padding: 0 0.3rem;
     }
 }
 
@@ -52,8 +52,8 @@
     .references-section__image-link {
         display: inline-block;
 
-        width: calc(100% / 6 - 5rem * 2);
-        margin: 5rem;
+        width: calc(100% / 6 - 0.5rem * 2);
+        margin: 0.5rem;
 
         vertical-align: top;
 
@@ -64,19 +64,19 @@
 
     _:-ms-lang(x), .references-section__header,
     _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-        width: calc(99.95% / 6 - 5rem * 2);
+        width: calc(99.95% / 6 - 0.5rem * 2);
     }
 
     @media (min-width: 1540px) {
 
         .references-section--narrow .references-section__header,
         .references-section--narrow .references-section__image-link {
-            width: calc(100% / 5 - 5rem * 2);
+            width: calc(100% / 5 - 0.5rem * 2);
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 5 - 5rem * 2);
+            width: calc(99.95% / 5 - 0.5rem * 2);
         }
     }
 
@@ -84,12 +84,12 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 5 - 5rem * 2);
+            width: calc(100% / 5 - 0.5rem * 2);
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 5 - 5rem * 2);
+            width: calc(99.95% / 5 - 0.5rem * 2);
         }
     }
 
@@ -97,12 +97,12 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 4 - 5rem * 2);
+            width: calc(100% / 4 - 0.5rem * 2);
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 4 - 5rem * 2);
+            width: calc(99.95% / 4 - 0.5rem * 2);
         }
     }
 
@@ -110,12 +110,12 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 3 - 5rem * 2);
+            width: calc(100% / 3 - 0.5rem * 2);
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 3 - 5rem * 2);
+            width: calc(99.95% / 3 - 0.5rem * 2);
         }
     }
 
@@ -123,13 +123,13 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 3 - 4rem * 2);
-            margin: 4rem;
+            width: calc(100% / 3 - 0.4rem * 2);
+            margin: 0.4rem;
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 3 - 4rem * 2);
+            width: calc(99.95% / 3 - 0.4rem * 2);
         }
     }
 
@@ -137,12 +137,12 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 2 - 5rem * 2);
+            width: calc(100% / 2 - 0.5rem * 2);
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 2 - 5rem * 2);
+            width: calc(99.95% / 2 - 0.5rem * 2);
         }
     }
 
@@ -150,13 +150,13 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 2 - 4rem * 2);
-            margin: 4rem;
+            width: calc(100% / 2 - 0.4rem * 2);
+            margin: 0.4rem;
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 2 - 4rem * 2);
+            width: calc(99.95% / 2 - 0.4rem * 2);
         }
     }
 
@@ -164,13 +164,13 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 2 - 3rem * 2);
-            margin: 3rem;
+            width: calc(100% / 2 - 0.3rem * 2);
+            margin: 0.3rem;
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 2 - 3rem * 2);
+            width: calc(99.95% / 2 - 0.3rem * 2);
         }
     }
 
@@ -178,21 +178,21 @@
 
         .references-section__header,
         .references-section__image-link {
-            width: calc(100% / 1 - 10rem * 2);
-            margin-right: 10rem;
-            margin-left: 10rem;
+            width: calc(100% / 1 - 1rem * 2);
+            margin-right: 1rem;
+            margin-left: 1rem;
         }
 
         _:-ms-lang(x), .references-section__header,
         _:-ms-lang(x), .references-section__image-link { /* IE / Edge */
-            width: calc(99.95% / 1 - 10rem * 2);
+            width: calc(99.95% / 1 - 1rem * 2);
         }
     }
 
 /*---------------------------- HEADER ----------------------------*/
 
 .references-section__header {
-    border: 1rem solid currentColor;
+    border: 0.1rem solid currentColor;
 }
 
     .references-section__header-content {
@@ -200,7 +200,7 @@
         flex-direction: column;
         justify-content: flex-end;
 
-        padding: 21rem;
+        padding: 2.1rem;
     }
 
     .references-section__header--center .references-section__header-content {
@@ -214,14 +214,14 @@
         (min-width: 420px) and (max-width: 499px) {
 
             .references-section__header-content {
-                padding: 16rem;
+                padding: 1.6rem;
             }
     }
 
     @media (min-width: 360px) and (max-width: 419px) {
 
         .references-section__header-content {
-            padding: 14rem;
+            padding: 1.4rem;
         }
     }
 
@@ -231,12 +231,12 @@
 
         .references-section__project-name {
             max-width: 100%;
-            margin-bottom: 7rem;
+            margin-bottom: 0.7rem;
 
-            font-size: 19rem;
+            font-size: 1.9rem;
             font-weight: 600;
             text-transform: uppercase;
-            line-height: 25rem;
+            line-height: 2.5rem;
             letter-spacing: 0.06em;
         }
 
@@ -244,47 +244,47 @@
             (min-width: 420px) and (max-width: 499px) {
 
                 .references-section__project-name {
-                    margin-bottom: 5rem;
+                    margin-bottom: 0.5rem;
 
-                    font-size: 17rem;
-                    line-height: 21rem;
+                    font-size: 1.7rem;
+                    line-height: 2.1rem;
                 }
         }
 
         @media (min-width: 360px) and (max-width: 419px) {
 
             .references-section__project-name {
-                margin-bottom: 4rem;
+                margin-bottom: 0.4rem;
 
-                font-size: 15rem;
-                line-height: 19rem;
+                font-size: 1.5rem;
+                line-height: 1.9rem;
             }
         }
 
         .references-section__project-name:only-child {
             margin-bottom: 0;
 
-            line-height: 34rem;
+            line-height: 3.4rem;
         }
 
         @media (min-width: 640px) and (max-width: 799px),
             (min-width: 420px) and (max-width: 499px) {
 
                 .references-section__project-name:only-child {
-                    line-height: 28rem;
+                    line-height: 2.8rem;
                 }
         }
 
         @media (min-width: 360px) and (max-width: 419px) {
 
             .references-section__project-name:only-child {
-                line-height: 25rem;
+                line-height: 2.5rem;
             }
         }
 
             .references-section__project-name .ui-text-arrow {
                 margin-right: 0;
-                margin-left: 2rem;
+                margin-left: 0.2rem;
 
                 stroke-width: 2;
             }
@@ -292,10 +292,10 @@
         .references-section__description {
             max-width: 100%;
 
-            font-size: 15rem;
+            font-size: 1.5rem;
             font-style: italic;
             font-weight: 400;
-            line-height: 21rem;
+            line-height: 2.1rem;
             letter-spacing: 0.01em;
         }
 
@@ -303,8 +303,8 @@
             (min-width: 420px) and (max-width: 499px) {
 
                 .references-section__description {
-                    font-size: 14rem;
-                    line-height: 19rem;
+                    font-size: 1.4rem;
+                    line-height: 1.9rem;
                     letter-spacing: 0.025em;
                 }
         }
@@ -312,8 +312,8 @@
         @media (min-width: 360px) and (max-width: 419px) {
 
             .references-section__description {
-                font-size: 13rem;
-                line-height: 17rem;
+                font-size: 1.3rem;
+                line-height: 1.7rem;
                 letter-spacing: 0.025em;
             }
         }
@@ -337,7 +337,7 @@
 .references-section__image-link {
     position: relative;
 
-    outline-offset: -2rem;
+    outline-offset: -0.2rem;
 
     pointer-events: auto;
 }
@@ -357,7 +357,7 @@
     width: 100%;
     height: 100%;
 
-    border: 3rem solid var(--color-light);
+    border: 0.3rem solid var(--color-light);
     opacity: 0;
 
     transition: inherit;
@@ -367,7 +367,7 @@
 @media (min-width: 360px) and (max-width: 419px) {
 
     .references-section__image-link:before {
-        border-width: 2rem;
+        border-width: 0.2rem;
     }
 }
 

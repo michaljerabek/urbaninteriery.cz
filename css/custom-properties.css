@@ -9,8 +9,8 @@
  */
 
 :root {
-    --page-max-width: 1540rem;
-    --page-padding: 40rem;
+    --page-max-width: 154rem;
+    --page-padding: 4rem;
 
     --font-primary: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif;
 
@@ -64,6 +64,6 @@
 /* /GENERATE: MEDIA */
 
     :root {
-        --page-padding: 15rem;
+        --page-padding: 1.5rem;
     }
 }

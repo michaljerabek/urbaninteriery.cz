@@ -31,7 +31,7 @@
  * Seznam modulů: gulp gulp-replace gulp-rename gulp-concat gulp-clean-css gulp-rewrite-css
  * critical gulp-uglify-es gulp-imagemin imagemin-mozjpeg gulp-svg-sprite yargs fse gulp-file
  * twig xml2js yamljs csvjson (ejs? handlebars?) gulp-promise gulp-postcss postcss
- * autoprefixer gulp-babel
+ * autoprefixer gulp-babel postcss-nesting
  *
  * !!! Tasky je nutné spouštět postupně. (Paralelní zpracování není nijak řešeno.)
  * */
@@ -1508,6 +1508,7 @@ function getNewestDirName() {
  *
  * Seznam modulů: gulp gulp-rename gulp-concat gulp-clean-css
  * gulp-rewrite-css gulp-promise gulp-postcss postcss autoprefixer
+ * postcss-nesting
  * */
 
 /*Minifikace CSS.*/
@@ -1519,6 +1520,8 @@ const postcss = requireModule("postcss");
 const autoprefixer = requireModule("autoprefixer");
 /*Nahradí CSS Custom Properties jejich hodnotami*/
 const cssvariables = requireModule("postcss-css-variables");
+/*Odstraní zanoření @media*/
+const postcssNesting = requireModule("postcss-nesting");
 
 exports.css = css;
 
@@ -1603,6 +1606,7 @@ function generateCSSBuild(gpromise, file, files) {
                 };
 
                 return css => {
+
                     //vynechat soubory knihoven
                     if (css.source.input.file.indexOf(path.resolve(PATHS.LIBS_FILES) + "\\") === -1) {
 
@@ -1610,11 +1614,17 @@ function generateCSSBuild(gpromise, file, files) {
 
                             if (rule.params.indexOf("px") !== -1) {
 
-                                rule.params = rule.params.replace(
-                                    /(\d*\.?\d+)px/g,
-                                    (m, $1) =>
-                                        $1 ? (toFixed((parseFloat($1) / 16), 10) + "em"): m
-                                );
+                                let overwrittenParams = rule.params
+                                    .replace(
+                                        /(max-(?:width|height):\s*)(\d+)px/g,
+                                        (m, $1, $2) => $1 && $2 ? ($1 + (parseFloat($2) + 0.9) + "px"): m
+                                    )
+                                    .replace(
+                                        /(\d*\.?\d+)px/g,
+                                        (m, $1) => $1 ? (toFixed((parseFloat($1) / 16), 10) + "em"): m
+                                    );
+
+                                rule.params = overwrittenParams;
                             }
                         });
                     }
@@ -1625,7 +1635,11 @@ function generateCSSBuild(gpromise, file, files) {
         .pipe(concat(file))
         .pipe(gPostcss([
             //nahradit CSS Custom Properties
-            cssvariables()
+            cssvariables({
+                preserveAtRulesOrder: true
+            }),
+            //odstranit zanoření @media
+            postcssNesting()
         ]))
         //vytovřít výstup
         .pipe(
@@ -1758,6 +1772,8 @@ function comp(cb) {
 
                             //najít barvy
                             let colors = color ? match.match(/--color-[a-z-_]+\:\s*[^\n\r;]+/gi) : [];
+
+                            colors = colors.filter(color => color.match(/-rgb:/) === null);
 
                             let colorNames = colors.map(color => color.match(/--color-([a-z-_]+)/i)).map(color => color && color[1] ? color[1] : null);
 

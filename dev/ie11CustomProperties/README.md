@@ -2,7 +2,7 @@
 A real Custom Properties polyfill for IE11.  
 Used on about 9000 [Live Websites](https://publicwww.com/websites/ie11CustomProperties/ "source")  
   
-**[See the demo!](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/ed6a269145661bfc6a43a5b69f06248fa760e766/demo.html)**  
+**[See the demo!](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/c5429975aa85cac5edde0a9c09ead18bb7be891b/demo.html)**  
 
 **New in v2.7.2: Great performance improvement**
 
@@ -25,7 +25,7 @@ Used on about 9000 [Live Websites](https://publicwww.com/websites/ie11CustomProp
 - SVG-support
 - media-queries (redraw on media-changes)
 - transform relative to absolute urls
-- under 3k (min+gzip) and dependency-free
+- under 4k (min+gzip) and dependency-free
 
 ## Ussage
 You only want IE11 to load the polyfill, use this snipped in the head of your html file, it then just works:
@@ -91,5 +91,5 @@ Use `<div style="--color:blue" ie-style="--color:blue">` for it
 eg. `#header` results in `#header.iecp_u44`
 
 ## Tests
-[See the tests](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/ed6a269145661bfc6a43a5b69f06248fa760e766/tests.html)  
+[See the tests](https://rawcdn.githack.com/nuxodin/ie11CustomProperties/c5429975aa85cac5edde0a9c09ead18bb7be891b/tests.html)  
 PRs welcome

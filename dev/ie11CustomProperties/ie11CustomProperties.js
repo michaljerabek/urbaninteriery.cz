@@ -1,4 +1,4 @@
-/*! ie11CustomProperties.js v2.7.4 | MIT License | https://git.io/fjXMN */
+/*! ie11CustomProperties.js v3.0.4 | MIT License | https://git.io/fjXMN */
 !function () {
 	'use strict';
 
@@ -95,15 +95,7 @@
 			}
 		});
 	}
-	// if ('children' in HTMLElement.prototype && !('children' in Element.prototype)) {
-	// 	copyProperty('children', HTMLElement.prototype, Element.prototype);
-	// }
-	// if ('contains' in HTMLElement.prototype && !('contains' in Element.prototype)) {
-	// 	copyProperty('contains', HTMLElement.prototype, Element.prototype);
-	// }
-	// if ('getElementsByClassName' in HTMLElement.prototype && !('getElementsByClassName' in Element.prototype)) {
-	// 	copyProperty('getElementsByClassName', HTMLElement.prototype, Element.prototype);
-	// }
+
 
 	// main logic
 
@@ -127,7 +119,9 @@
 		});
 	});
 	onElement('style', function (el) {
-		if (el.hasAttribute('ie-polyfilled')) return;
+		//if (el.hasAttribute('ie-polyfilled')) return;
+		if (el.ieCP_polyfilled) return;
+
 		if (el.ieCP_elementSheet) return;
 		var css = el.innerHTML;
 		var newCss = rewriteCss(css);
@@ -215,7 +209,8 @@
 	}
 	function activateStyleElement(style, css) {
 		style.innerHTML = css;
-		style.setAttribute('ie-polyfilled', true);
+		//style.setAttribute('ie-polyfilled', true);
+		style.ieCP_polyfilled = true;
 		var rules = style.sheet.rules, i=0, rule; // cssRules = CSSRuleList, rules = MSCSSRuleList
 		while (rule = rules[i++]) {
 			const found = parseRewrittenStyle(rule.style);
@@ -281,9 +276,11 @@
 				if (style.owningElement) continue;
 				var value = style['-ieVar-'+prop];
 				if (!value) continue;
-				var value = styleComputeValueWidthVars(getComputedStyle(document.documentElement), value);
+				value = styleComputeValueWidthVars(getComputedStyle(document.documentElement), value);
 				if (value === '') continue;
-				style[prop] = value;
+				try {
+					style[prop] = value;
+				} catch(e) {}
 			}
 		}
 	}
@@ -307,7 +304,6 @@
 		// ie11 has the strange behavoir, that groups of selectors are individual rules, but starting with the full selector:
 		// td, th, button { color:red } results in this rules:
 		// "td, th, button" | "th, th" | "th"
-		console.log(selector)
 		selector = selector.split(',')[0];
 		for (var pseudo in pseudos) {
 			var parts = selector.split(':'+pseudo);
@@ -407,10 +403,10 @@
 			collecting = false;
 			drawing = true;
 			drawQueue.forEach(_drawElement);
-			requestAnimationFrame(function(){ // mutationObserver will trigger delayed
+			drawQueue.clear();
+			setTimeout(function(){ // mutationObserver will trigger delayed, requestAnimationFrame will miss some changes
 				drawing = false;
 			})
-			drawQueue.clear();
 		})
 	}
 
@@ -419,14 +415,46 @@
 		drawTree(e.target)
 	}
 
-	const regValueGetters = /var\(([^),]+)(\,([^),]+))?\)/g;
-	function styleComputeValueWidthVars(style, valueWithVar, details){
-		return valueWithVar.replace(regValueGetters, function (full, variable, x, fallback) {
-			variable = variable.trim();
-			var pValue = style.getPropertyValue(variable);
+	function findVars(str, cb){ // css value parser
+		let level=0, openedLevel=null, lastPoint=0, newStr = '', i=0, char, insideCalc;
+		while (char=str[i++]) {
+			if (char === '(') {
+				++level;
+				if (openedLevel === null && str[i-4]+str[i-3]+str[i-2] === 'var') {
+					openedLevel = level;
+					newStr += str.substring(lastPoint, i-4);
+					lastPoint = i;
+				}
+				if (str[i-5]+str[i-4]+str[i-3]+str[i-2] === 'calc') {
+					insideCalc = level;
+				}
+			}
+			if (char === ')' && openedLevel === level) {
+				let variable = str.substring(lastPoint, i-1).trim(), fallback;
+				let x = variable.indexOf(',');
+				if (x!==-1) {
+					fallback = variable.slice(x+1);
+					variable = variable.slice(0,x);
+				}
+				newStr += cb(variable, fallback, insideCalc);
+				lastPoint = i;
+				openedLevel = null;
+			}
+			if (char === ')') {
+				--level;
+				if (insideCalc === level) insideCalc = null;
+			}
+		}
+		newStr += str.substring(lastPoint);
+		return newStr;
+	}
+	function styleComputeValueWidthVars(style, valueWithVars, details){
+		return findVars(valueWithVars, function(variable, fallback, insideCalc){
+			var value = style.getPropertyValue(variable);
+			if (insideCalc) value = value.replace(/^calc\(/, '('); // prevent nested calc
 			if (details && style.lastPropertyServedBy !== document.documentElement) details.allByRoot = false;
-			if (pValue === '' && fallback !== undefined) pValue = fallback.trim(); // fallback
-			return pValue;
+			if (value==='' && fallback) value = styleComputeValueWidthVars(style, fallback, details);
+			return value;
 		});
 	}
 
@@ -434,8 +462,8 @@
 	var observer = new MutationObserver(function(mutations) {
 		if (drawing) return;
 		for (var i=0, mutation; mutation=mutations[i++];) {
-			if (mutation.attributeName === 'ie-polyfilled') continue;
-			//if (mutation.attributeName === 'iecp-needed') continue; // why?
+			//if (mutation.attributeName === 'ie-polyfilled') continue;
+			if (mutation.attributeName === 'iecp-needed') continue; // why?
 			// recheck all selectors if it targets new elements?
 			drawTree(mutation.target);
 		}
@@ -535,6 +563,7 @@
 			if (!el.ieCP_setters) el.ieCP_setters = {};
 			el.ieCP_setters[property] = 1;
 			drawTree(el);
+			if (el === document.documentElement) redrawStyleSheets(); // make this inside drawTree?
 		}
 		property = '-ie-'+(prio==='important'?'❗':'') + property.substr(2);
 		this.cssText += '; ' + property + ':' + value + ';';

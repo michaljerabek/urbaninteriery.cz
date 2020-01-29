@@ -39,12 +39,12 @@
 .btn {
     position: relative;
 
-    padding: 16rem 30rem;
+    padding: 1.6rem 3rem;
 
     text-align: center;
 
-    border: 1rem solid;
-    outline-offset: -2rem;
+    border: 0.1rem solid;
+    outline-offset: -0.2rem;
 
     overflow: hidden;
 
@@ -54,32 +54,32 @@
 @media (max-width: 1023px) {
 
     .btn {
-        padding: 14rem 25rem;
+        padding: 1.4rem 2.5rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .btn {
-        padding: 12rem 25rem;
+        padding: 1.2rem 2.5rem;
     }
 }
 
 .btn--small {
-    padding: 14rem 30rem;
+    padding: 1.4rem 3rem;
 }
 
 @media (max-width: 1023px) {
 
     .btn--small {
-        padding: 12rem 25rem;
+        padding: 1.2rem 2.5rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .btn--small {
-        padding: 11rem 20rem;
+        padding: 1.1rem 2rem;
     }
 }
 
@@ -132,11 +132,11 @@
 .btn--light {
     color: var(--color-light);
     border-color: var(--color-highlight);
-    box-shadow: inset 0px 0px 0px 2rem rgba(var(--color-highlight-rgb), 0);
+    box-shadow: inset 0px 0px 0px 0.2rem rgba(var(--color-highlight-rgb), 0);
 }
 
 .btn--light:focus {
-    box-shadow: inset 0px 0px 0px 2rem var(--color-highlight);
+    box-shadow: inset 0px 0px 0px 0.2rem var(--color-highlight);
 }
 
 .btn--light:before,
@@ -147,11 +147,11 @@
 .btn--dark {
     color: var(--color-dark);
     border-color: var(--color-secondary);
-    box-shadow: inset 0px 0px 0px 2rem rgba(var(--color-secondary-rgb), 0);
+    box-shadow: inset 0px 0px 0px 0.2rem rgba(var(--color-secondary-rgb), 0);
 }
 
 .btn--dark:focus {
-    box-shadow: inset 0px 0px 0px 2rem var(--color-secondary);
+    box-shadow: inset 0px 0px 0px 0.2rem var(--color-secondary);
 }
 
 .btn--dark:before,
@@ -175,10 +175,10 @@
 
         backface-visibility: hidden;
 
-        font-size: 19rem;
+        font-size: 1.9rem;
         font-weight: 600;
         text-transform: uppercase;
-        line-height: 21rem;
+        line-height: 2.1rem;
         letter-spacing: 0.05em;
 
         vertical-align: middle;
@@ -189,8 +189,8 @@
     @media (max-width: 1023px) {
 
         .btn .text {
-            font-size: 17rem;
-            line-height: 20rem;
+            font-size: 1.7rem;
+            line-height: 2rem;
             letter-spacing: 0.07em;
         }
     }
@@ -198,23 +198,23 @@
     @media (max-width: 639px) {
 
         .btn .text {
-            font-size: 15rem;
-            line-height: 17rem;
+            font-size: 1.5rem;
+            line-height: 1.7rem;
             letter-spacing: 0.06em;
         }
     }
 
     .btn--small .text {
-        font-size: 17rem;
-        line-height: 20rem;
+        font-size: 1.7rem;
+        line-height: 2rem;
         letter-spacing: 0.07em;
     }
 
     @media (max-width: 1023px) {
 
         .btn--small .text {
-            font-size: 15rem;
-            line-height: 17rem;
+            font-size: 1.5rem;
+            line-height: 1.7rem;
             letter-spacing: 0.06em;
         }
     }
@@ -222,8 +222,8 @@
     @media (max-width: 639px) {
 
         .btn--small .text {
-            font-size: 14rem;
-            line-height: 16rem;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
             letter-spacing: 0.09em;
         }
     }

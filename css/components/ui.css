@@ -26,11 +26,11 @@
 }
 
 :focus-visible {
-    outline: 2rem solid var(--color-dark);
+    outline: 0.2rem solid var(--color-dark);
 }
 
 :-moz-focusring {
-    outline: 2rem solid var(--color-dark);
+    outline: 0.2rem solid var(--color-dark);
 }
 
 .inverse-ui:focus,
@@ -77,11 +77,11 @@
 }
 
 .custom-focus:focus-visible {
-    outline-width: 2rem;
+    outline-width: 0.2rem;
 }
 
 .custom-focus:-moz-focusring {
-    outline-width: 2rem;
+    outline-width: 0.2rem;
 }
 
 .custom-focus-deep:focus,
@@ -91,12 +91,12 @@
 
 .custom-focus-deep:focus-visible,
 .custom-focus-deep :focus-visible {
-    outline-width: 2rem;
+    outline-width: 0.2rem;
 }
 
 .custom-focus-deep:-moz-focusring,
 .custom-focus-deep :-moz-focusring {
-    outline-width: 2rem;
+    outline-width: 0.2rem;
 }
 
 /*--------------------------------------------------------------------*/
@@ -114,9 +114,9 @@
     left: 0;
     z-index: 999999999999999;
 
-    padding: 8rem 12rem;
+    padding: 0.8rem 1.2rem;
 
-    font-size: 16rem;
+    font-size: 1.6rem;
 
     color: var(--color-dark);
     background-color: var(--color-light);
@@ -320,7 +320,7 @@ select::-ms-expand {
 
     height: 0.6666em;
     width: calc(0.6666em * (13 / 14));
-    margin-right: 2rem;
+    margin-right: 0.2rem;
 
     vertical-align: baseline;
 

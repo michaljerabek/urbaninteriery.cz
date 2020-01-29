@@ -68,10 +68,10 @@ const OPTION = {
 };
 
 const SCROLL_OFFSET = {
-    "(max-height: 29.9375em)": 0,
-    "(min-height: 30em) and (max-width: 47.9375em)": 60,
-    "(min-height: 30em) and (max-width: 63.9375em)": 66,
-    "(min-height: 40em) and (max-width: 78.6875em)": 77,
+    "(max-height: 29.99375em)": 0,
+    "(min-height: 30em) and (max-width: 47.99375em)": 60,
+    "(min-height: 30em) and (max-width: 63.99375em)": 66,
+    "(min-height: 40em) and (max-width: 78.74375em)": 77,
     "(min-height: 40em)": 84
 };
 

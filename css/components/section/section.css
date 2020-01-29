@@ -3,39 +3,39 @@
 /*====================================================================*/
 
 .section {
-    padding-top: 88rem;
-    padding-bottom: 88rem;
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
 }
 
 @media (max-width: 1259px) {
 
     .section {
-        padding-top: 80rem;
-        padding-bottom: 80rem;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
     }
 }
 
 @media (max-width: 1023px) {
 
     .section {
-        padding-top: 70rem;
-        padding-bottom: 70rem;
+        padding-top: 7rem;
+        padding-bottom: 7rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .section {
-        padding-top: 66rem;
-        padding-bottom: 66rem;
+        padding-top: 6.6rem;
+        padding-bottom: 6.6rem;
     }
 }
 
 @media (max-width: 479px) {
 
     .section {
-        padding-top: 50rem;
-        padding-bottom: 50rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 }
 
@@ -54,7 +54,7 @@
 
             .section__narrow-content {
                 width: 100%;
-                max-width: 892rem;
+                max-width: 89.2rem;
                 margin-right: auto;
                 margin-left: auto;
             }
@@ -64,57 +64,57 @@
 
 .section__title {
     margin: 0;
-    margin-bottom: 88rem;
+    margin-bottom: 8.8rem;
 
-    font-size: 64rem;
-    line-height: 68rem;
+    font-size: 6.4rem;
+    line-height: 6.8rem;
     text-align: center;
 }
 
 @media (max-width: 1259px) {
 
     .section__title {
-        margin-bottom: 80rem;
+        margin-bottom: 8rem;
     }
 }
 
 @media (max-width: 1023px) {
 
     .section__title {
-        margin-bottom: 60rem;
+        margin-bottom: 6rem;
 
-        font-size: 50rem;
-        line-height: 55rem;
+        font-size: 5rem;
+        line-height: 5.5rem;
     }
 }
 
 @media (max-width: 767px) {
 
     .section__title {
-        margin-bottom: 50rem;
+        margin-bottom: 5rem;
 
-        font-size: 45rem;
-        line-height: 50rem;
+        font-size: 4.5rem;
+        line-height: 5rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .section__title {
-        margin-bottom: 45rem;
+        margin-bottom: 4.5rem;
 
-        font-size: 40rem;
-        line-height: 45rem;
+        font-size: 4rem;
+        line-height: 4.5rem;
     }
 }
 
 @media (max-width: 479px) {
 
     .section__title {
-        margin-bottom: 40rem;
+        margin-bottom: 4rem;
 
-        font-size: 34rem;
-        line-height: 40rem;
+        font-size: 3.4rem;
+        line-height: 4rem;
     }
 }
 
@@ -122,11 +122,11 @@
     display: flex;
 
     margin: 0;
-    margin-bottom: 25rem;
+    margin-bottom: 2.5rem;
 
-    font-size: 40rem;
+    font-size: 4rem;
     font-weight: 300;
-    line-height: 47rem;
+    line-height: 4.7rem;
     text-align: left;
 
     color: var(--color-primary);
@@ -135,41 +135,41 @@
 @media (max-width: 1023px) {
 
     .section__subtitle {
-        margin-bottom: 21rem;
+        margin-bottom: 2.1rem;
 
-        font-size: 34rem;
-        line-height: 37rem;
+        font-size: 3.4rem;
+        line-height: 3.7rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .section__subtitle {
-        margin-bottom: 19rem;
+        margin-bottom: 1.9rem;
 
-        font-size: 30rem;
-        line-height: 34rem;
+        font-size: 3rem;
+        line-height: 3.4rem;
     }
 }
 
 @media (max-width: 479px) {
 
     .section__subtitle {
-        margin-bottom: 16rem;
+        margin-bottom: 1.6rem;
 
-        font-size: 25rem;
-        line-height: 30rem;
+        font-size: 2.5rem;
+        line-height: 3rem;
     }
 }
 
     .section__subtitle .icon {
-        top: 1rem;
+        top: 0.1rem;
 
         flex-shrink: 0;
 
-        width: 47rem;
-        height: 47rem;
-        margin-right: 25rem;
+        width: 4.7rem;
+        height: 4.7rem;
+        margin-right: 2.5rem;
 
         stroke: currentColor;
     }
@@ -177,9 +177,9 @@
     @media (max-width: 1023px) {
 
         .section__subtitle .icon {
-            width: 37rem;
-            height: 37rem;
-            margin-right: 21rem;
+            width: 3.7rem;
+            height: 3.7rem;
+            margin-right: 2.1rem;
 
             stroke-width: 1.21621622;
         }
@@ -188,9 +188,9 @@
     @media (max-width: 639px) {
 
         .section__subtitle .icon {
-            width: 34rem;
-            height: 34rem;
-            margin-right: 16rem;
+            width: 3.4rem;
+            height: 3.4rem;
+            margin-right: 1.6rem;
 
             stroke-width: 1.323529;
         }
@@ -199,9 +199,9 @@
     @media (max-width: 479px) {
 
         .section__subtitle .icon {
-            width: 30rem;
-            height: 30rem;
-            margin-right: 14rem;
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1.4rem;
 
             stroke-width: 1.40625;
         }
@@ -212,29 +212,29 @@
 .section__note {
     position: relative;
 
-    padding-top: 28rem;
+    padding-top: 2.8rem;
 
-    font-size: 24rem;
+    font-size: 2.4rem;
     font-weight: normal;
     font-style: italic;
-    line-height: 37rem;
+    line-height: 3.7rem;
 }
 
 @media (max-width: 1023px) {
 
     .section__note {
-        padding-top: 25rem;
+        padding-top: 2.5rem;
 
-        font-size: 21rem;
-        line-height: 32rem;
+        font-size: 2.1rem;
+        line-height: 3.2rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .section__note {
-        font-size: 19rem;
-        line-height: 28rem;
+        font-size: 1.9rem;
+        line-height: 2.8rem;
     }
 }
 
@@ -251,16 +251,16 @@
 
 .section__note:before {
     width: 100%;
-    height: 1rem;
+    height: 0.1rem;
 }
 
 .section__note:after {
-    width: 1rem;
-    height: 10rem;
+    width: 0.1rem;
+    height: 1rem;
 }
 
     .section__note .ui-text-arrow {
-        margin-right: 4rem;
+        margin-right: 0.4rem;
     }
 
 /*---------------------------- BTN ----------------------------*/
@@ -268,7 +268,7 @@
 .section__btn {
     align-self: center;
 
-    margin-top: 88rem;
+    margin-top: 8.8rem;
     margin-right: auto;
     margin-left: auto;
 }
@@ -276,28 +276,28 @@
 @media (max-width: 1259px) {
 
     .section__btn {
-        margin-top: 80rem;
+        margin-top: 8rem;
     }
 }
 
 @media (max-width: 1023px) {
 
     .section__btn {
-        margin-top: 66rem;
+        margin-top: 6.6rem;
     }
 }
 
 @media (max-width: 639px) {
 
     .section__btn {
-        margin-top: 60rem;
+        margin-top: 6rem;
     }
 }
 
 @media (max-width: 479px) {
 
     .section__btn {
-        margin-top: 50rem;
+        margin-top: 5rem;
     }
 }
 

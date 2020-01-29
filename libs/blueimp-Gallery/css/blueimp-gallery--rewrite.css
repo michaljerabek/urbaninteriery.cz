@@ -277,7 +277,7 @@
     padding: 10px 25px;
     padding-right: 56px;
 
-    font-size: 20rem;
+    font-size: 2rem;
     font-style: italic;
     line-height: 1.5;
 
@@ -288,14 +288,14 @@
 @media (max-width: 1023px) {
 
     .blueimp-gallery > .title {
-        font-size: 18rem;
+        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 767px) {
 
     .blueimp-gallery > .title {
-        font-size: 16rem;
+        font-size: 1.6rem;
     }
 }
 
