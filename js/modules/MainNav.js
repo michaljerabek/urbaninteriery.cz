@@ -100,7 +100,7 @@ function getScrollOffset() {
         }
     });
 
-    return offset;
+    return GNS.recalcPxByRoot(offset);
 }
 
 function getDataOption(option, ...$elements) {

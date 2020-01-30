@@ -3,6 +3,8 @@
 const NAME = "WNS";
 const SELF = window[NAME] || {};
 
+const ROOT_FONT_SIZE = 10;
+
 let $win, $doc;
 
 export default Object.defineProperties(SELF, {
@@ -37,6 +39,13 @@ export default Object.defineProperties(SELF, {
         writable: false,
         configurable: false,
         value: ($t => e => (($t[0] = e) && $t) || $t)(window.jQuery([null]))
+    },
+
+    /* Přepočítá hodnotu v px podle nastavení velikosti písma v prohlížeči. */
+    recalcPxByRoot: {
+        writable: false,
+        configurable: false,
+        value: pxValue => pxValue * (parseFloat(getComputedStyle(document.documentElement).fontSize) / ROOT_FONT_SIZE)
     },
 
     NAME: {

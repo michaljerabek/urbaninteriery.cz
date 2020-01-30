@@ -1737,6 +1737,7 @@
   /*jshint esnext: true, evil: true, browser: true, devel: true, jquery: true*/
   var NAME = "WNS";
   var SELF = window[NAME] || {};
+  var ROOT_FONT_SIZE = 10;
   var $win, $doc;
 
   var _default = Object.defineProperties(SELF, {
@@ -1779,6 +1780,15 @@
           return ($t[0] = e) && $t || $t;
         };
       }(window.jQuery([null]))
+    },
+
+    /* Přepočítá hodnotu v px podle nastavení velikosti písma v prohlížeči. */
+    recalcPxByRoot: {
+      writable: false,
+      configurable: false,
+      value: function value(pxValue) {
+        return pxValue * (parseFloat(getComputedStyle(document.documentElement).fontSize) / ROOT_FONT_SIZE);
+      }
     },
     NAME: {
       configurable: false,
@@ -2187,7 +2197,7 @@
         return true;
       }
     });
-    return offset;
+    return _GNS.default.recalcPxByRoot(offset);
   }
 
   function getDataOption(option) {
