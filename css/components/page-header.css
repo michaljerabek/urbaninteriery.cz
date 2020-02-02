@@ -413,7 +413,7 @@
 @media (max-width: 767px) {
 
     .page-header__main-bg {
-        background-image: url("../../img/page-header__img--mobile.jpg?v2");
+        background-image: url("../../img/page-header__img--mobile.jpg");
     }
 }
 
@@ -426,7 +426,7 @@
     (max-width: 767px) and (                min-resolution: 2dppx) {
 
         .page-header__main-bg {
-            background-image: url("../../img/page-header__img--mobile@2x.jpg?v2");
+            background-image: url("../../img/page-header__img--mobile@2x.jpg");
         }
 }
 

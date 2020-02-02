@@ -3588,7 +3588,7 @@ select::-ms-expand {
 @media (max-width: 47.99375em) {
 
     .page-header__main-bg {
-        background-image: url("../img/page-header__img--mobile.jpg?v2");
+        background-image: url("../img/page-header__img--mobile.jpg");
     }
 }
 
@@ -3600,7 +3600,7 @@ select::-ms-expand {
     (max-width: 47.99375em) and (                min-resolution: 2dppx) {
 
         .page-header__main-bg {
-            background-image: url("../img/page-header__img--mobile@2x.jpg?v2");
+            background-image: url("../img/page-header__img--mobile@2x.jpg");
         }
 }
 
