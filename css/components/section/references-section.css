@@ -321,14 +321,38 @@
 /*------------------------------ COLORS ------------------------------*/
 
 .references-section__header {
-    color: #9EC9C7;
+    color: #9fbe8e;
 }
 
 .references-section__header ~ .references-section__header {
-    color: #D4A6AA;
+    color: #9EC9C7;
 }
 
 .references-section__header ~ .references-section__header ~ .references-section__header {
+    color: #bfa383;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header {
+    color: #c6c18a;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header {
+    color: #97be9e;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header {
+    color: #8fbdc3;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header {
+    color: #93afd6;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header {
+    color: #D4A6AA;
+}
+
+.references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header ~ .references-section__header {
     color: #8A9194;
 }
 
@@ -338,6 +362,7 @@
     position: relative;
 
     outline-offset: -0.2rem;
+    backface-visibility: hidden;
 
     pointer-events: auto;
 }
@@ -384,11 +409,11 @@
 
     .references-section__references:hover .references-section__img,
     .references-section__references[focus-within] .references-section__img {
-        opacity: 0.6;
+        opacity: 0.55;
     }
 
     .references-section__references:focus-within .references-section__img {
-        opacity: 0.6;
+        opacity: 0.55;
     }
 
     .references-section__image-link:hover .references-section__img,
